@@ -1,0 +1,210 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+#wrapper {
+	width: 1024px;
+	margin: 0 auto;
+}
+
+header {
+	background-color: #3758A9;
+	color: #fff;
+}
+
+header h1 {
+	height: 70px;
+	line-height: 70px;
+	margin-left: 20px;
+}
+
+section {
+	min-height: 500px;
+}
+
+section p.register {
+	margin-top: 10px;
+	margin-right: 10px;
+	text-align: right;
+}
+
+footer {
+	background-color: #3758A9;
+	color: #fff;
+}
+
+footer p {
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+
+.text_center {
+	text-align: center;
+}
+/* 기본 설정 */
+
+/* 등록 페이지 */
+section table.register {
+	width: 90%;
+	margin: 10px auto;
+}
+
+section table.register th, section table.register td {
+	padding: 10px;
+}
+
+section table.register th {
+	text-align: right;
+}
+
+section table.register .register_form {
+	border: 1px solid #E8E5E5;
+	outline: none;
+}
+
+section table.register td input, section table.register td select {
+	height: 30px;
+}
+
+section table.register td input[name="name"] {
+	width: 500px;
+}
+
+section .register_btn {
+	margin-top: 20px;
+	text-align: center;
+}
+
+section .register_btn input, section .register_btn a {
+	width: 100px;
+	padding: 15px 0;
+	border: none;
+	color: #fff;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+section .register_btn input[type="submit"] {
+	background-color: #14BB43;
+	cursor: pointer;
+}
+
+section .register_btn a {
+	display: inline-block;
+	background-color: #CA160D;
+}
+/* 등록 페이지 */
+
+/* 리스트 페이지 */
+section p.page_cnt {
+	margin: 20px 0 10px 50px;
+}
+section table.list {
+	width: 90%;
+	margin: 0px auto 20px;
+	border-collapse: collapse;
+}
+
+
+section table.list th, section table.list td {
+	padding: 10px 0;
+}
+
+section table.list th {
+	border-top: 2px solid #042E7D;
+	border-bottom: 2px solid #042E7D;
+}
+
+section table.list td {
+	border-bottom: 1px solid #042E7D;
+}
+
+section table.list tr:hover td {
+	background-color: #85D0F9;
+}
+
+section table.list td:first-child {
+	padding-left: 5px;
+}
+
+section table.list td.no_project {
+	height: 200px;
+	line-height: 200px;
+	text-align: center;
+}
+section p.paging {
+	margin-top: 40px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+section p.paging a {
+	padding: 10px 15px;
+	background-color: #17A7CE;
+	color: #fff;
+	border: none;
+}
+/* 리스트 페이지 */
+
+/* 상세 페이지 */
+section table.read {
+	width: 90%;
+	margin: 20px auto;
+	border-collapse: collapse;
+}
+
+section table.read th, section table.read td {
+	height: 40px;
+	border-bottom: 1px solid #042E7D;
+}
+
+section table.read th {
+	text-align: right;
+	padding-right: 20px;
+	width: 150px;
+}
+
+section table.read tr:first-child th, section table.read tr:first-child td {
+	border-top: 2px solid #042E7D;
+}
+
+section table.read tr:last-child th, section table.read tr:last-child td {
+	height: 400px;
+	vertical-align: top;
+	border-bottom: 2px solid #042E7D;
+	padding: 10px;
+}
+section .read_btn {
+	height: 60px;
+	text-align: center;
+	margin: 20px 0;
+}
+section .read_btn a {
+	display:inline-block;
+	width: 100px;
+	padding: 15px 0;
+	border: none;
+	color: #fff;
+	font-weight: bold;
+	font-size: 1.2em;
+	border-radius: 10px;
+}
+section .read_btn a.modify {
+	background-color: #14BB43;
+}
+section .read_btn a.remove {
+	background-color: #CA160D;
+}
+section .read_btn a.list {
+	background-color: #F0ECEC;
+	color: #333;
+}
+/* 상세 페이지 */

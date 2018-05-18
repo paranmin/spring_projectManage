@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dgit.mapper.ProjectMapper">
+	<select id="selectListByPage" parameterType="map">
+		select pj_no, pj_name,
+		pj_content, pj_start_date, pj_end_date, pj_state from project order by
+		pj_no desc limit #{start}, #{width} 
+	</select>
+
+	<select id="selectByNo">
+		select pj_no, pj_name,
+		pj_content, pj_start_date, pj_end_date, pj_state from project where
+		pj_no = #{no}
+	</select>
+	
+	<select id="getTotalCnt" resultType="int">
+		select count(pj_no) as cnt from project
+	</select>
+
+	<insert id="insertProject" parameterType="ProjectVO">
+		insert into
+		project(pj_name, pj_content, pj_start_date, pj_end_date, pj_state)
+		values (#{name}, #{content}, #{startDate}, #{endDate}, #{state})
+	</insert>
+
+	<update id="modifyProject" parameterType="ProjectVO">
+		update project set
+		pj_name = #{name},
+		pj_content = #{content},
+		pj_start_date = #{startDate},
+		pj_end_date = #{endDate},
+		pj_state = #{state}
+		where pj_no = #{no}
+	</update>
+
+	<delete id="removeProject" parameterType="int">
+		delete from project
+		where pj_no = #{no}
+	</delete>
+</mapper>
