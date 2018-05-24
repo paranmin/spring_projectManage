@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dgit.dao.ProjectDao;
+import com.dgit.dto.Criteria;
 import com.dgit.dto.ProjectVO;
 
 @Service
@@ -28,10 +29,10 @@ public class ProjectSerivceImpl implements ProjectService {
 	}
 
 	@Override
-	public List<ProjectVO> selectListByPage(Map<String, Integer> map) {
+	public List<ProjectVO> selectListByPage(Criteria criteria) {
 		List<ProjectVO> list = null;
 		try {
-			list =  dao.selectListByPage(map);
+			list =  dao.selectListByPage(criteria);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

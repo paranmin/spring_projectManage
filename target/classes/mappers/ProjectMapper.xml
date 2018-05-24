@@ -3,10 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dgit.mapper.ProjectMapper">
-	<select id="selectListByPage" parameterType="map">
+	<select id="selectListByPage" parameterType="criteria">
 		select pj_no, pj_name,
 		pj_content, pj_start_date, pj_end_date, pj_state from project order by
-		pj_no desc limit #{start}, #{width} 
+		pj_no desc limit #{pageStart}, #{perPageNum}
 	</select>
 
 	<select id="selectByNo">

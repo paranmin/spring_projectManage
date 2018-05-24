@@ -1,14 +1,14 @@
 package com.dgit.service;
 
 import java.util.List;
-import java.util.Map;
 
+import com.dgit.dto.Criteria;
 import com.dgit.dto.ProjectVO;
 
 public interface ProjectService {
 	public List<ProjectVO> selectAll();
 
-	public List<ProjectVO> selectListByPage(Map<String, Integer> map);
+	public List<ProjectVO> selectListByPage(Criteria criteria);
 
 	public ProjectVO selectByNo(int no);
 

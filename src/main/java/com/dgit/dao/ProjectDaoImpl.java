@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.dgit.dto.Criteria;
 import com.dgit.dto.ProjectVO;
 
 @Repository
@@ -23,8 +24,8 @@ public class ProjectDaoImpl implements ProjectDao {
 	}
 
 	@Override
-	public List<ProjectVO> selectListByPage(Map<String, Integer> map) throws SQLException {
-		return session.selectList(namespace + "selectListByPage", map);
+	public List<ProjectVO> selectListByPage(Criteria criteria) throws SQLException {
+		return session.selectList(namespace + "selectListByPage", criteria);
 	}
 
 	@Override

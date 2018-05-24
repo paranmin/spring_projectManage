@@ -1,8 +1,6 @@
 package com.dgit.controller;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,9 +10,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.dgit.dto.Criteria;
+import com.dgit.dto.PageMaker;
 import com.dgit.dto.ProjectVO;
 import com.dgit.service.ProjectService;
-import com.dgit.util.PagingUtil;
 
 @Controller
 public class ProjectController {
@@ -40,31 +39,19 @@ public class ProjectController {
 	}
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public String projectList(Model model, String page) {
+	public String projectList(Model model, Criteria criteria) {
 		logger.info("project list Get...");
 
-		int iPage = 0;
-		if (page == null || page.equals("")) {
-			iPage = 1;
-		}
-		int width = 5;
-		int row = 10;
-		int start = (iPage - 1) * row;
-		Map<String, Integer> map = new HashMap<>();
-		map.put("width", row);
-		map.put("start", start);
-
-		List<ProjectVO> list = service.selectListByPage(map);
-
-		int total = service.getTotalCnt();
-
-		int cnt = (int) Math.ceil((double) total / row);
-
-		String paging = PagingUtil.getInstance().makePaging(cnt, iPage, width, row, "/list");
+		List<ProjectVO> list = service.selectListByPage(criteria);
 
 		model.addAttribute("list", list);
-		model.addAttribute("total", total);
-		model.addAttribute("paging", paging);
+
+		PageMaker pageMaker = PageMaker.getInstance();
+		pageMaker.setCriteria(criteria);
+		pageMaker.setTotalCount(service.getTotalCnt());
+		logger.info("pagemaker : " + pageMaker);
+		model.addAttribute("pageMaker", pageMaker);
+
 		return "projectList";
 	}
 }
