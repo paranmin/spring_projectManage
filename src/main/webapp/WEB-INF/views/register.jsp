@@ -27,8 +27,8 @@ $(function() {
 		}
 		return true;
 	});
-	$("#startdate").datepicker({ dateFormat: "yy-mm-dd"});
-	$("#enddate").datepicker({ dateFormat: "yy-mm-dd"});
+	$("#startDate").datepicker({ dateFormat: "yy-mm-dd"});
+	$("#endDate").datepicker({ dateFormat: "yy-mm-dd"});
 });
 </script>
 </head>
@@ -36,7 +36,7 @@ $(function() {
 	<div id="wrapper">
 		<jsp:include page="module/top.jsp" flush="false" />
 		<section>
-			<form action="register.do" method="post">
+			<form action="register" method="post">
 			<table class="register">
 				<tr>
 					<th><label for="name">프로젝트 이름</label></th>
@@ -48,11 +48,11 @@ $(function() {
 				</tr>
 				<tr>
 					<th><label for="name">시작날짜</label></th>
-					<td><input type="text" name="startdate" id="startdate" class="register_form" /></td>
+					<td><input type="text" name="startDate" id="startDate" class="register_form" /></td>
 				</tr>
 				<tr>
 					<th><label for="name">마감날짜</label></th>
-					<td><input type="text" name="enddate" id="enddate" class="register_form" /></td>
+					<td><input type="text" name="endDate" id="endDate" class="register_form" /></td>
 				</tr>
 				<tr>
 					<th><label for="state">상태</label></th>

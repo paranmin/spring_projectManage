@@ -6,17 +6,17 @@ import java.util.Map;
 import com.dgit.dto.ProjectVO;
 
 public interface ProjectService {
-	public List<ProjectVO> selectAll() throws Exception;
+	public List<ProjectVO> selectAll();
 
-	public List<ProjectVO> selectListByPage(Map<String, Integer> map) throws Exception;
+	public List<ProjectVO> selectListByPage(Map<String, Integer> map);
 
-	public ProjectVO selectByNo(int no) throws Exception;
+	public ProjectVO selectByNo(int no);
 
-	public int getTotalCnt() throws Exception;
+	public int getTotalCnt();
 
-	public int insertProject(ProjectVO project) throws Exception;
+	public int insertProject(ProjectVO project);
 
-	public int modifyProject(ProjectVO project)  throws Exception;
+	public int modifyProject(ProjectVO project);
 
-	public int removeProject(int no)  throws Exception;
+	public int removeProject(int no);
 }
