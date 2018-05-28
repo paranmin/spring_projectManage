@@ -1,2 +1,2 @@
-# spring_projectManage
-project manage v01
+# 스프링 프로젝트 관리
+버전 v01
