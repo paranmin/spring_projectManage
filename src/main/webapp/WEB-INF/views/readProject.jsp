@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>SPMS</title>
-<link rel="stylesheet" href="css/style.css" media="all" />
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/style.css" media="all" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(function() {
@@ -42,9 +42,9 @@ $(function() {
 				</tr>
 			</table>
 			<p class="read_btn">
-				<a href="modify.do?no=${project.no}" class="modify">수정</a>
-				<a href="remove.do?no=${project.no}" class="remove">삭제</a>
-				<a href="list.do" class="list">목록</a>
+				<a href="modify?no=${project.no}" class="modify">수정</a>
+				<a href="remove?no=${project.no}" class="remove">삭제</a>
+				<a href="list" class="list">목록</a>
 			</p>
 		</section>
 		<jsp:include page="module/bottom.jsp" flush="false" />

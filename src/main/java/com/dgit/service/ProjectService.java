@@ -10,7 +10,7 @@ public interface ProjectService {
 
 	public List<ProjectVO> selectListByPage(Criteria criteria);
 
-	public ProjectVO selectByNo(int no);
+	public ProjectVO read(int no);
 
 	public int getTotalCnt();
 
@@ -19,4 +19,5 @@ public interface ProjectService {
 	public int modifyProject(ProjectVO project);
 
 	public int removeProject(int no);
+
 }

@@ -1,6 +1,7 @@
 package com.dgit.service;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -40,7 +41,7 @@ public class ProjectSerivceImpl implements ProjectService {
 	}
 
 	@Override
-	public ProjectVO selectByNo(int no) {
+	public ProjectVO read(int no) {
 		ProjectVO vo = null;
 		try {
 			vo = dao.selectByNo(no);

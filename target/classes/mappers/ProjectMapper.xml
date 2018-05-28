@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dgit.mapper.ProjectMapper">
-	<select id="selectListByPage" parameterType="criteria">
+	<resultMap type="ProjectVO" id="projectResult">
+		<id property="no" column="pj_no" />
+		<result property="name" column="pj_name" />
+		<result property="content" column="pj_content" />
+		<result property="startDate" column="pj_start_date" />
+		<result property="endDate" column="pj_end_date" />
+		<result property="state" column="pj_state" />
+	</resultMap>
+
+	<select id="selectListByPage" parameterType="criteria" resultMap="projectResult">
 		select pj_no, pj_name,
 		pj_content, pj_start_date, pj_end_date, pj_state from project order by
 		pj_no desc limit #{pageStart}, #{perPageNum}
 	</select>
 
-	<select id="selectByNo">
+	<select id="selectByNo" resultMap="projectResult">
 		select pj_no, pj_name,
 		pj_content, pj_start_date, pj_end_date, pj_state from project where
 		pj_no = #{no}
 	</select>
-	
+
 	<select id="getTotalCnt" resultType="int">
 		select count(pj_no) as cnt from project
 	</select>

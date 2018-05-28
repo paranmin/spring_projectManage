@@ -7,11 +7,11 @@
 <head>
 <meta charset="UTF-8">
 <title>프로젝트 수정</title>
-<link rel="stylesheet" href="css/style.css" media="all" />
-<link rel="stylesheet" href="css/jquery-ui.min.css" media="all" />
-<link rel="stylesheet" href="css/jquery-ui.theme.css" media="all" />
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/style.css" media="all" />
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/jquery-ui.min.css" media="all" />
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/jquery-ui.theme.css" media="all" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="js/jquery-ui.min.js"></script>
+<script src="${pageContext.request.contextPath }/resources/js/jquery-ui.min.js"></script>
 <script>
 $(function() {
 	$("input:submit").on("click",function() {
@@ -29,8 +29,8 @@ $(function() {
 		}
 		return true;
 	});
-	$("#startdate").datepicker({ dateFormat: "yy-mm-dd"});
-	$("#enddate").datepicker({ dateFormat: "yy-mm-dd"});
+	$("#startDate").datepicker({ dateFormat: "yy-mm-dd"});
+	$("#endDate").datepicker({ dateFormat: "yy-mm-dd"});
 });
 </script>
 </head>
@@ -38,7 +38,7 @@ $(function() {
 	<div id="wrapper">
 		<jsp:include page="module/top.jsp" flush="false" />
 		<section>
-			<form action="modify.do" method="post">
+			<form action="modify" method="post">
 			<input type="hidden" name="no" value="${project.no}" />
 			<table class="register">
 				<tr>
@@ -51,11 +51,11 @@ $(function() {
 				</tr>
 				<tr>
 					<th><label for="name">시작날짜</label></th>
-					<td><input type="text" name="startdate" id="startdate" class="register_form" value="<fmt:formatDate value="${project.startDate}" pattern="yyyy-MM-dd"/>" /></td>
+					<td><input type="text" name="startDate" id="startDate" class="register_form" value="<fmt:formatDate value="${project.startDate}" pattern="yyyy-MM-dd"/>" /></td>
 				</tr>
 				<tr>
 					<th><label for="name">마감날짜</label></th>
-					<td><input type="text" name="enddate" id="enddate" class="register_form" value="<fmt:formatDate value="${project.endDate}" pattern="yyyy-MM-dd"/>" /></td>
+					<td><input type="text" name="endDate" id="endDate" class="register_form" value="<fmt:formatDate value="${project.endDate}" pattern="yyyy-MM-dd"/>" /></td>
 				</tr>
 				<tr>
 					<th><label for="state">상태</label></th>
@@ -69,7 +69,7 @@ $(function() {
 			</table>
 			<p class="register_btn">
 				<input type="submit" value="수정" />
-				<a href="read.do?no=${project.no}">취소</a>
+				<a href="read?no=${project.no}">취소</a>
 			</p>
 			</form>
 		</section>
